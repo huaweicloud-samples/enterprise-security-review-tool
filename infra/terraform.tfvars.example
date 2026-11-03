@@ -1,0 +1,23 @@
+# 示例变量文件（terraform.tfvars.example）
+# 使用方式：复制本文件为 terraform.tfvars 后按需修改；
+#          请勿将真实凭据写入本文件或提交到代码仓库。
+#
+# 华为云鉴权通过环境变量注入（C8：密钥不落盘、不进版本库）：
+#   export HW_ACCESS_KEY="<YOUR_AK>"
+#   export HW_SECRET_KEY="<YOUR_SK>"
+#   export HW_REGION_NAME="cn-north-4"
+#
+# 模型服务（MaaS / ModelArts Studio）鉴权同样走环境变量：
+#   export MODEL_API_KEY="<YOUR_MAAS_API_KEY>"
+
+# 华为云区域
+region = "cn-north-4"
+
+# 是否创建报告归档桶（默认 false：本地 CLI 运行无需任何云资源）
+enabled = false
+
+# 报告归档桶名称（enabled = true 时必须显式指定，需全局唯一）
+bucket_name = "my-srt-reports-<your-account-id>"
+
+# 归档对象前缀（如 reports/2026-10）
+report_path_prefix = "reports"

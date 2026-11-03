@@ -1,0 +1,41 @@
+{
+  "name": "iac-security-review-tool",
+  "version": "1.0.0",
+  "description": "IaC 安全审查 CLI：对华为云 Terraform 基础设施代码执行确定性规则扫描 + 大模型辅助威胁建模与修复建议，产出 Excel/HTML 报告",
+  "main": "build/index.js",
+  "type": "module",
+  "bin": {
+    "srt": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check .",
+    "format": "biome format --write ."
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^14.0.0",
+    "exceljs": "^4.4.0",
+    "glob": "^11.0.3",
+    "inquirer": "^12.8.2",
+    "js-yaml": "^4.1.0",
+    "ora": "^9.0.0",
+    "winston": "^3.17.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.4",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.16.5",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.6"
+  }
+}
